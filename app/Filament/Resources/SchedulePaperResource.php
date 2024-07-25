@@ -50,7 +50,7 @@ class SchedulePaperResource extends Resource
             ->columns([
                 TextColumn::make('category.name')->searchable()->sortable(),
                 TextColumn::make('code_abstract')->sortable(),
-                TextColumn::make('name_participant'),
+                TextColumn::make('name_participant')->searchable(),
                 TextColumn::make('title')->limit('100'),
                 TextColumn::make('date_presenter')->date('l, j F Y'),
                 TextColumn::make('time_presenter')
