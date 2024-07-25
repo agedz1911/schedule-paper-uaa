@@ -9,6 +9,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
@@ -32,7 +33,9 @@ class FreepaperList extends Component implements HasForms, HasTable
                     ->label('Name')
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('title'),
+                TextColumn::make('title')
+                    ->limit('50')
+                    ->tooltip(fn (Model $record): string => "By {$record->title}"),
                 TextColumn::make('category.name')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
