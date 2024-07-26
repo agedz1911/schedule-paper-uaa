@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Imports\SchedulePaperImporter;
 use App\Filament\Resources\SchedulePaperResource\Pages;
 use App\Filament\Resources\SchedulePaperResource\RelationManagers;
 use App\Models\SchedulePaper;
@@ -15,6 +16,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\ImportAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -51,7 +53,7 @@ class SchedulePaperResource extends Resource
                 TextColumn::make('category.name')->searchable()->sortable(),
                 TextColumn::make('code_abstract')->sortable(),
                 TextColumn::make('name_participant')->searchable(),
-                TextColumn::make('title')->limit('100'),
+                TextColumn::make('title')->limit('50'),
                 TextColumn::make('date_presenter')->date('l, j F Y'),
                 TextColumn::make('time_presenter')
             ])

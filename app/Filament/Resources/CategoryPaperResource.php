@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Imports\CategoryPaperImporter;
 use App\Filament\Resources\CategoryPaperResource\Pages;
 use App\Filament\Resources\CategoryPaperResource\RelationManagers;
 use App\Models\CategoryPaper;
@@ -11,6 +12,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\ImportAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
@@ -51,6 +53,10 @@ class CategoryPaperResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
+            // ->headerActions([
+            //     ImportAction::make()
+            //         ->importer(CategoryPaperImporter::class)
+            // ]);
     }
 
     public static function getRelations(): array

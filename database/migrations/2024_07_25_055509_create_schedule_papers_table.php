@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('schedule_papers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained('category_papers')->cascadeOnDelete();
-            $table->string('code_abstract');
+            $table->string('code_abstract')->nullable();
             $table->string('name_participant');
             $table->text('title');
             $table->date('date_presenter');
