@@ -8,6 +8,7 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Attributes\Title;
@@ -52,7 +53,8 @@ class FreepaperList extends Component implements HasForms, HasTable
                 TextColumn::make('time_presenter')->label('Time')
             ])
             ->filters([
-                // ...
+                SelectFilter::make('category')
+                    ->relationship('category', 'name')
             ])
             ->actions([
                 // ...
