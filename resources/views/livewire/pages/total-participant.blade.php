@@ -3,7 +3,7 @@
         <table class="table table-zebra">
             <!-- head -->
             <thead>
-                <tr class="text-xl font-bold">
+                <tr class="text-lg font-bold">
                     <th>#</th>
                     <th>Association / Country</th>
                     <th>Total</th>
@@ -12,7 +12,7 @@
             </thead>
             <tbody>
                 @foreach ($totals as $total)
-                    <tr class="text-lg">
+                    <tr>
                         <th>{{ $loop->iteration }}</th>
                         <td>{{ $total->country }}</td>
                         <td class="font-bold">{{ $total->total }}</td>

@@ -8,4 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Workshop extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'date',
+        'sponsor',
+        'quota',
+        'status',
+        'description',
+        'flyer',
+        'schedule',
+        'is_active',
+        'code'
+    ];
+
+    protected $casts = [
+        'schedule' => 'array'
+    ];
 }

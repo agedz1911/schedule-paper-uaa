@@ -43,6 +43,8 @@ class FreepaperList extends Component implements HasForms, HasTable
                         'Podium Presentation' => 'success',
                         'Podium Video Presentation' => 'warning',
                         'Podium Poster Presentation' => 'info',
+                        'Moderated Video Presentation' => 'danger',
+                        
                     })
                     ->sortable()
                     ->searchable(),

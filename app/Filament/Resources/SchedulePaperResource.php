@@ -18,6 +18,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\ImportAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -58,7 +59,8 @@ class SchedulePaperResource extends Resource
                 TextColumn::make('time_presenter')
             ])
             ->filters([
-                //
+                SelectFilter::make('category')
+                    ->relationship('category', 'name')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
