@@ -1,7 +1,9 @@
 <?php
 
 use App\Livewire\Pages\FreepaperList;
+use App\Livewire\Pages\HomeWorkshop;
 use App\Livewire\Pages\TotalParticipant;
+use App\Livewire\Pages\Workshop;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', FreepaperList::class);
 Route::get('/total-participant', TotalParticipant::class);
+Route::get('/workshop', Workshop::class);
+Route::get('/home-workshop', HomeWorkshop::class);

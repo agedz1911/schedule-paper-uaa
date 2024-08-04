@@ -19,7 +19,9 @@ class Workshop extends Model
         'flyer',
         'schedule',
         'is_active',
-        'code'
+        'code',
+        'no_urut',
+        'url'
     ];
 
     protected $casts = [

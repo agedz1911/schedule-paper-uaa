@@ -52,7 +52,8 @@ class CategoryPaperResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->reorderable('sort');
             // ->headerActions([
             //     ImportAction::make()
             //         ->importer(CategoryPaperImporter::class)

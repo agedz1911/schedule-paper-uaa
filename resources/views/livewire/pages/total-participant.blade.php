@@ -21,7 +21,7 @@
                 @endforeach
                     <tr class="text-xl font-bold">
                         <td colspan="2" class="text-end ">Total Delegates</td>
-                        <td>2572</td>
+                        <td>{{ $totals->sum('total') }}</td>
                         <td>Delegates</td>
                     </tr>
             </tbody>

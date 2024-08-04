@@ -47,11 +47,14 @@ class WorkshopResource extends Resource
                         'Fully Booked' => 'Fully Booked',
                     ]),
                 Textarea::make('description'),
+                TextInput::make('no_urut')
+                    ->numeric(),
+                TextInput::make('url'),
                 FileUpload::make('flyer')
-                    ->directory('form-attachments'),
+                    ->directory('workshop'),
                 FileUpload::make('schedule')
                     ->multiple()
-                    ->directory('form-attachments'),
+                    ->directory('workshop'),
                 Toggle::make('is_active')
                     ->default(true)
             ]);
@@ -61,15 +64,18 @@ class WorkshopResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('workshop')
-                    ->getStateUsing(fn (Workshop $record) => $record->name . ' ' . '(' . $record->code . ')'),
+                TextColumn::make('code')->searchable()->sortable(),
+                TextColumn::make('name')
+                ->label('Workshop')
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('date')
-                    ->date('d M'),
+                    ->date('d M')
+                    ->sortable(),
                 ImageColumn::make('flyer'),
                 ImageColumn::make('schedule'),
                 TextColumn::make('description')
-                    ->limit(100)
-                    ->wrap(),
+                    ->limit(50),
                 IconColumn::make('is_active')
                     ->boolean()
             ])

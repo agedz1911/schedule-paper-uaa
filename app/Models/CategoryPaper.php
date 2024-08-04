@@ -11,7 +11,8 @@ class CategoryPaper extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'is_active'
+        'is_active',
+        'sort'
     ];
 
     public function schedule(): HasMany

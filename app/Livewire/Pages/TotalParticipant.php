@@ -3,8 +3,11 @@
 namespace App\Livewire\Pages;
 
 use App\Models\TotalParticipant as ModelsTotalParticipant;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
+
+#[Title('Total Participant')]
 class TotalParticipant extends Component
 {
     public function render()
