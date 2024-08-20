@@ -18,6 +18,7 @@ class SchedulePaper extends Model
         'date_presenter',
         'time_presenter',
         'is_active',
+        'room'
     ];
 
     public function category(): BelongsTo

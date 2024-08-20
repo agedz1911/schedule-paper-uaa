@@ -43,7 +43,9 @@ class FreepaperList extends Component implements HasForms, HasTable
                         'Podium Presentation' => 'success',
                         'Podium Video Presentation' => 'warning',
                         'Podium Poster Presentation' => 'info',
-                        'Moderated Video Presentation' => 'danger',
+                        'Moderated Video Presentation' => 'info',
+                        'Unmoderated Poster' => 'danger',
+                        'Unmoderated Video' => 'danger',
                         
                     })
                     ->sortable()
@@ -52,8 +54,10 @@ class FreepaperList extends Component implements HasForms, HasTable
                     ->label('Date')
                     ->sortable()
                     ->date('l, j F Y'),
-                TextColumn::make('time_presenter')->label('Time')
+                TextColumn::make('time_presenter')->label('Time'),
+                TextColumn::make('room')
             ])
+            ->defaultSort('name_participant', 'asc')
             ->filters([
                 SelectFilter::make('category')
                     ->relationship('category', 'name')
