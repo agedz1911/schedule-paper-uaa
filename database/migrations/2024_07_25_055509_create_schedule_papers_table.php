@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('code_abstract')->nullable();
             $table->string('name_participant');
             $table->text('title');
-            $table->date('date_presenter');
-            $table->string('time_presenter');
+            $table->date('date_presenter')->nullable();
+            $table->string('time_presenter')->nullable();
             $table->boolean('is_active');
             $table->timestamps();
         });

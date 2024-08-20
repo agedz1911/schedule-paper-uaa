@@ -43,6 +43,7 @@ class SchedulePaperResource extends Resource
                 DatePicker::make('date_presenter')
                     ->native(false),
                 TextInput::make('time_presenter'),
+                TextInput::make('room'),
                 Toggle::make('is_active')->default(true)
             ]);
     }
@@ -56,7 +57,8 @@ class SchedulePaperResource extends Resource
                 TextColumn::make('name_participant')->searchable(),
                 TextColumn::make('title')->limit('50'),
                 TextColumn::make('date_presenter')->date('l, j F Y'),
-                TextColumn::make('time_presenter')
+                TextColumn::make('time_presenter'),
+                TextColumn::make('room'),
             ])
             ->filters([
                 SelectFilter::make('category')

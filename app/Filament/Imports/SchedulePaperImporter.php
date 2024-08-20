@@ -33,6 +33,9 @@ class SchedulePaperImporter extends Importer
             ImportColumn::make('time_presenter')
                 ->requiredMapping()
                 ->rules(['required', 'max:255']),
+            ImportColumn::make('room')
+                ->requiredMapping()
+                ->rules(['required', 'max:255']),
             ImportColumn::make('is_active')
                 ->requiredMapping()
                 ->boolean()
